@@ -85,3 +85,27 @@ The data presents some challenges and insights across different entities, as sum
 - Additionally, **information about `lastLogin` dates is absent for certain users**, which may hinder analysis related to user engagement or activity patterns.
 
 
+### Fourth task: Fourth: Communicate with Stakeholders
+
+#### Subject: Fetch Rewards Data Review & Questions
+
+#### Body:
+Hello Stark,
+
+Finally I got to have a look at the Fetch Rewards Data that You wanted me to. consisting Receipts, Brands and Users datasets in JSON format.
+
+First think i noticed is that the JSON formatting is not suitable for analysis. I had to reformat it adding a comma at the end of each row.
+
+I have few questions regarding these datasets. I may have failed to notice but I didn't find a very straight forward link in between Receipts and brands. So wanna know if I have missed something, If you think i'm wrong and is there something i missed please let me know.
+
+i wanted to check if there are any data quality issues so i went ahead with basic checks like looking for null _id values, dupliate values, missing values, statistical analysis of numerical columns etc. my major findings are that brands dataset didn't have any missing or duplicated information. Receipts data had some missing information and users dataset has uniqueness issue. 
+
+Before diving deep into these issues i would like to ask you regarding the data collection and entry process, understanding this might help me to identify where the missing data and formatting issues are getting originated. Or I would like to get in touch with the data steward who might be the best point of contact to discuss these data quality issues. 
+
+  
+And to optimize my approach knowing the specific use cases of these datasets. this also helps with query optimization and indexing strategies.
+
+If we can address these issues, it will greatly helps in the brand level analysis and I also think it's better to schedule a call to discuss further.
+
+Regards,
+Harsha
