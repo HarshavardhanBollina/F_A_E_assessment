@@ -14,11 +14,11 @@ After looking over the supplied JSON datasets, I've come to the conclusion that 
 
 ### Second Task: Write a query that directly answers a predetermined question from a business stakeholder
 
-These PostgreSQL-written SQL query's are intended to be used with the newly generated relational model. The third and fourth questions from the stakeholders are the ones I wanted to respond to. Since I am sure that my model is properly built to address these two problems, I decided to move forward with those two inquiries. Since the study revealed that many of the receipts lack the brandCode values and that the same characteristic is not entirely unique, I don't want to take a chance while responding to any inquiries involving the bridge table, receipt_to_brand table. 
+These PostgreSQL-written SQL query's are intended to be used with the newly generated relational model. The **third and fourth** questions from the stakeholders are the ones I wanted to respond to. Since I am sure that my model is properly built to address these two problems, I decided to move forward with those two inquiries. Since the study revealed that many of the receipts lack the brandCode values and that the same characteristic is not entirely unique, I don't want to take a chance while responding to any inquiries involving the bridge table, receipt_to_brand table. 
 
 
 
-**Question 1: Average Spend - 'Accepted' vs. 'Rejected' Receipts**
+**Question 3: Average Spend - 'Accepted' vs. 'Rejected' Receipts**
 
 ```sql
 SELECT rewardsReceiptStatus, AVG(totalSpent) AS averageSpend
@@ -29,7 +29,7 @@ GROUP BY rewardsReceiptStatus;
 
 
 
-**Question 2: Total Items Purchased - 'Accepted' vs. 'Rejected' Receipts**
+**Question 4: Total Items Purchased - 'Accepted' vs. 'Rejected' Receipts**
 
 ```sql
  SELECT rewardsReceiptStatus, SUM(purchasedItemCount) AS totalItemsPurchased
