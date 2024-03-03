@@ -16,21 +16,27 @@ After looking over the supplied JSON datasets, I've come to the conclusion that 
 
 These PostgreSQL-written SQL query's are intended to be used with the newly generated relational model. The third and fourth questions from the stakeholders are the ones I wanted to respond to. Since I am sure that my model is properly built to address these two problems, I decided to move forward with those two inquiries. Since the study revealed that many of the receipts lack the brandCode values and that the same characteristic is not entirely unique, I don't want to take a chance while responding to any inquiries involving the bridge table, receipt_to_brand table. 
 
-Question: When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
-Answer: 
+
+**Question 1: Average Spend - 'Accepted' vs. 'Rejected' Receipts**
+
+```sql
 SELECT rewardsReceiptStatus, AVG(totalSpent) AS averageSpend
 FROM fact_receipt
 WHERE rewardsReceiptStatus IN ('Accepted', 'Rejected')
 GROUP BY rewardsReceiptStatus;
+```
 
 
-Question: When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
-Answer: SELECT rewardsReceiptStatus, SUM(purchasedItemCount) AS totalItemsPurchased
+**Question 2: Total Items Purchased - 'Accepted' vs. 'Rejected' Receipts**
+
+```sql
+ SELECT rewardsReceiptStatus, SUM(purchasedItemCount) AS totalItemsPurchased
 FROM fact_receipt
 WHERE rewardsReceiptStatus IN ('Accepted', 'Rejected')
 GROUP BY rewardsReceiptStatus;
+```
 
 Please refer the **script-3.sql** file for the whole phycical model. It has the Physical model including the chosen data types for all the attributes and then the sql queries.
 
