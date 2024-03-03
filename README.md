@@ -41,7 +41,47 @@ GROUP BY rewardsReceiptStatus;
 Please refer the **script-3.sql** file for the whole phycical model. It has the Physical model including the chosen data types for all the attributes and then the sql queries.
 
 
+### Third Task: Evaluate Data Quality Issues in the Data Provided
+
+After the first glance the main thing I noticed is that the JSON datasets are not correctly formatted. I had to add commas after every entry to make it compatible with the JSON python format
+
+I checked for data quality issues, focusing on the unique ID values, null values, and numeric and date columns' descriptions. for reference have a look at **analysis.ipynb**.
+
+here are the results:
+
+# Receipts
+- **Size:** 1,119 entries
+- **Missing Values:** None in ID
+- **Numerical Columns:**
+  - `bonusPointsEarned` (Wide range: 5-750, Avg: 238.89)
+  - `pointsEarned` (Wide range, signifying varying point rewards)
+  - `purchasedItemCount` (High values indicate large purchases)
+  - `totalSpent` (High values suggest substantial transactions)
+- **Date Columns:** Missing values in `pointsAwardedDate`, `purchaseDate`, and `finishedDate`
+
+# Brands
+- **Size:** 1,167 entries
+- **Missing Values:** None in ID
+- **Unique IDs:** All IDs are unique
+
+# Users
+- **Size:** 495 entries
+- **Missing Values:** None in ID
+- **Unique IDs:** Only 212 unique IDs (potential duplicates)
+- **Date Columns:** Missing values in 62 `lastLogin` entries
 
 
+The data presents some challenges and insights across different entities, as summarized below:
+
+## Receipts Data
+- The receipts data indicates a **wide range of spending and points received**, highlighting the variability in transactions.
+- There is **missing date information**, specifically in `pointsAwardedDate`, `purchaseDate`, and `finishedDate`, which could impact analysis related to timing and effectiveness of point awarding.
+
+## Brands Data
+- The brands data appears to be **complete with no missing or duplicated information**. Each brand ID is unique, suggesting a well-maintained dataset.
+
+## Users Data
+- There is a significant issue with **ID uniqueness** in the user data, with only 212 unique IDs out of 495 entries, indicating a high level of duplication.
+- Additionally, **information about `lastLogin` dates is absent for certain users**, which may hinder analysis related to user engagement or activity patterns.
 
 
