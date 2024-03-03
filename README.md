@@ -1,6 +1,6 @@
-## Fetch Rewards - Excercise
+# Fetch Rewards - Excercise
 
-#### First: Review Existing Unstructured Data and Diagram a New Structured Relational Data Model
+### First Task: Review Existing Unstructured Data and Diagram a New Structured Relational Data Model
 
 I created a relational data model. ref: ERD.pdf
 
@@ -12,6 +12,7 @@ The fact_receipt column in the rewardsreceiptitemlist property of the receipts f
 
 After looking over the supplied JSON datasets, I've come to the conclusion that there wasn't enough data in the rewardsReceiptItemList to connect receipts to the brands database.
 
+### Second Task: Write a query that directly answers a predetermined question from a business stakeholder
 
 
 
