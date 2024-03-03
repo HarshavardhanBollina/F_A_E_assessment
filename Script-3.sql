@@ -63,6 +63,26 @@ COPY receipt_to_brand (receiptId, brandCode) FROM '/receipt_to_brand.csv' DELIMI
 
 
 
+-- Average spend comparison
+SELECT rewardsReceiptStatus, AVG(totalSpent) AS averageSpend
+FROM fact_receipt
+WHERE rewardsReceiptStatus IN ('Accepted', 'Rejected')
+GROUP BY rewardsReceiptStatus;
+
+
+
+-- Total number of items purchased comparison
+SELECT rewardsReceiptStatus, SUM(purchasedItemCount) AS totalItemsPurchased
+FROM fact_receipt
+WHERE rewardsReceiptStatus IN ('Accepted', 'Rejected')
+GROUP BY rewardsReceiptStatus;
+
+
+
+
+
+
+
 
 
 
