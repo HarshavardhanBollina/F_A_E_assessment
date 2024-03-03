@@ -49,7 +49,7 @@ I checked for data quality issues, focusing on the unique ID values, null values
 
 here are the results:
 
-# Receipts
+#### Receipts
 - **Size:** 1,119 entries
 - **Missing Values:** None in ID
 - **Numerical Columns:**
@@ -59,12 +59,12 @@ here are the results:
   - `totalSpent` (High values suggest substantial transactions)
 - **Date Columns:** Missing values in `pointsAwardedDate`, `purchaseDate`, and `finishedDate`
 
-# Brands
+#### Brands
 - **Size:** 1,167 entries
 - **Missing Values:** None in ID
 - **Unique IDs:** All IDs are unique
 
-# Users
+#### Users
 - **Size:** 495 entries
 - **Missing Values:** None in ID
 - **Unique IDs:** Only 212 unique IDs (potential duplicates)
@@ -73,14 +73,14 @@ here are the results:
 
 The data presents some challenges and insights across different entities, as summarized below:
 
-## Receipts Data
+#### Receipts Data
 - The receipts data indicates a **wide range of spending and points received**, highlighting the variability in transactions.
 - There is **missing date information**, specifically in `pointsAwardedDate`, `purchaseDate`, and `finishedDate`, which could impact analysis related to timing and effectiveness of point awarding.
 
-## Brands Data
+#### Brands Data
 - The brands data appears to be **complete with no missing or duplicated information**. Each brand ID is unique, suggesting a well-maintained dataset.
 
-## Users Data
+#### Users Data
 - There is a significant issue with **ID uniqueness** in the user data, with only 212 unique IDs out of 495 entries, indicating a high level of duplication.
 - Additionally, **information about `lastLogin` dates is absent for certain users**, which may hinder analysis related to user engagement or activity patterns.
 
